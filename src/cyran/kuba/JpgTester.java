@@ -5,6 +5,7 @@ import java.io.*;
 public class JpgTester implements FileTester {
     @Override
     public boolean test(byte[] data) {
+
             String str = "";
             for(byte b : data){
                 str += Integer.toHexString(b & 0xFF);

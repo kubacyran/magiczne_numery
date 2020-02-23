@@ -13,7 +13,7 @@ public class ReadingData {
         try{
             fileInputStream = new FileInputStream(path);
             bufferedInputStream = new BufferedInputStream(fileInputStream);
-            data = new byte[bufferedInputStream.available()];
+            data = new byte[1000];
             bufferedInputStream.read(data);
         } finally {
             if(bufferedInputStream != null){
