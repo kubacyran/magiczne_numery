@@ -9,4 +9,10 @@ public class ExtensionsAndMagicNumbers {
         put("jpg", new String[]{"FFD8"});
         put("jpeg", new String[]{"FFD8"});
     }};
+
+   public static Map<String, String> magic_nums_to_extensions = new HashMap<>(){{
+       put("474946383761","gif");
+       put("474946383961","gif");
+       put("FFD8", "jpg/jpeg");
+   }};
 }
