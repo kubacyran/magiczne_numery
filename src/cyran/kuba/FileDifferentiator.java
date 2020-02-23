@@ -14,20 +14,22 @@ public class FileDifferentiator {
 
    public boolean differentFile(String path) throws IOException {
        String extension = path.substring(path.indexOf('.')).toLowerCase();
-
+System.out.println(extension);
        if(!handling_extensions.contains(extension)){
            throw new IllegalArgumentException();
        }
 
-       FileTester fileTester = new TesterProvider().provide(extension);System.out.println("tutaj");
+       FileTester fileTester = new TesterProvider().provide(extension);
        boolean isCorrect = false;
-       if(fileTester != null) {System.out.println("tutaj1");
-           isCorrect = fileTester.test(new ReadingData().read(path));
-           System.out.println(isCorrect);
+       byte[] data = new ReadingData().read(path);
+       if(fileTester != null) {
+           isCorrect = fileTester.test(data);
+
            if (isCorrect) {
                System.out.println("Prawidlowe rozszerzenie pliku");
            } else {
-               int x = 0;
+               String ext = new FindExtensions().find(data);
+               System.out.println("Nieprawidlowe rozszerzenie "+ extension +" podczas gdy plik ma "+ext);
            }
        }
        return isCorrect;
