@@ -7,7 +7,6 @@ public class ExtensionsAndMagicNumbers {
    public static Map<String, String[]> extension_to_magic_nums = new HashMap<>(){{
         put("gif",new String[]{"474946383761","474946383961" });
         put("jpg", new String[]{"FFD8"});
-        put("jpeg", new String[]{"FFD8"});
     }};
 
    public static Map<String, String> magic_nums_to_extensions = new HashMap<>(){{
