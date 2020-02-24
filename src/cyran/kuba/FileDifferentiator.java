@@ -14,7 +14,7 @@ public class FileDifferentiator {
 
    public boolean differentFile(String path) throws IOException {
        String extension = path.substring(path.indexOf('.')).toLowerCase();
-System.out.println(extension);
+
        if(!handling_extensions.contains(extension)){
            throw new IllegalArgumentException();
        }

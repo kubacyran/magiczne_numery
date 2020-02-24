@@ -8,7 +8,7 @@ public class JpgTester implements FileTester {
 
             String str = "";
             for(byte b : data){
-                str += Integer.toHexString(b & 0xFF);
+                str += Integer.toHexString(b & 0xFF).toUpperCase();
             }
             for(String s : ExtensionsAndMagicNumbers.extension_to_magic_nums.get(".jpg")){
                 if(str.startsWith(s)){
